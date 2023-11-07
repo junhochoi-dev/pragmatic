@@ -1,7 +1,7 @@
-package com.example.pragmatic.user.dao;
+package com.project.pragmatic.user.dao;
 
-import com.example.pragmatic.user.User;
-import com.example.pragmatic.user.dto.UserDto;
+import com.project.pragmatic.user.User;
+import com.project.pragmatic.user.dto.UserDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

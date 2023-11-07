@@ -9,9 +9,28 @@
   <title>Document</title>
 </head>
 <body>
-  <form class="container" action="/user/login" method="post">
+  <form class="container" action="/user/regist" method="post">
     <h1>PRAGMATIC에 오신 것을 환영합니다.</h1>
     <h1>회원가입 페이지</h1>
-  </form>>
+    <p>ID</p>
+    <input class="form-control" id="userid" name="userid" placeholder="ID"/>
+
+    <p>PASSWORD</p>
+    <input type="hidden" class="form-control" id="userpw" name="userpw" placeholder="PASSWORD"/>
+
+    <p>NAME</p>
+    <input class="form-control" placeholder="NAME"/>
+
+    <p>BIRTH</p>
+    <input class="form-control" placeholder="EMAIL"/>
+
+    <p>NUMBER</p>
+    <input class="form-control" placeholder="NUMBER"/>
+
+    <p>EMAIL</p>
+    <input class="form-control" placeholder="EMAIL"/>
+
+    <button type="submit" class="btn btn-primary" onclick="console.log({userid})">SIGN UP</button>
+  </form>
 </body>
 </html>

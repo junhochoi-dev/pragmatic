@@ -13,8 +13,8 @@ spring:
 
   jpa:
     hibernate:
-      # schema auto generate
-      # ddl-auto: create
+       # schema auto generate
+       ddl-auto: create
     # SQL query print
     show-sql: true
     properties:

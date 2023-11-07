@@ -1,4 +1,4 @@
-package com.example.pragmatic.config;
+package com.project.pragmatic.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,7 +26,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers(permissionPage).permitAll();
-                // .anyRequest().authenticated()
+                //.anyRequest().authenticated();
 //                .and()
 //                .formLogin()
 //                .loginPage("/user/login")

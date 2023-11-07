@@ -1,16 +1,14 @@
-package com.example.pragmatic.user.controller;
+package com.project.pragmatic.user.controller;
 
-import com.example.pragmatic.user.User;
-import com.example.pragmatic.user.dto.UserDto;
-import com.example.pragmatic.user.service.UserService;
+import com.project.pragmatic.user.User;
+import com.project.pragmatic.user.dto.UserDto;
+import com.project.pragmatic.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/user")
 @Controller
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired

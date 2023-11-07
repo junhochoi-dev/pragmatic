@@ -1,8 +1,8 @@
-package com.example.pragmatic.user.service;
+package com.project.pragmatic.user.service;
 
-import com.example.pragmatic.user.User;
-import com.example.pragmatic.user.dto.UserDto;
-import com.example.pragmatic.user.dao.UserDao;
+import com.project.pragmatic.user.User;
+import com.project.pragmatic.user.dto.UserDto;
+import com.project.pragmatic.user.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -18,7 +18,7 @@ public class UserService {
     @Autowired
     PasswordEncoder passwordEncoder;
 
-    public boolean login(UserDto userDto) {
+    public UserDto login(UserDto userDto) {
         System.out.println("##### [USER][REPOSITORY][LOGIN]");
         Optional<UserDto> tempDto = userRepository.findByUserid(userDto.getUserid());
         // 아이디 존재성

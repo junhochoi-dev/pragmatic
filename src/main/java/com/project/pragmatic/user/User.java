@@ -1,4 +1,4 @@
-package com.example.pragmatic.user;
+package com.project.pragmatic.user;
 
 
 import lombok.*;
@@ -24,6 +24,7 @@ public class User implements UserDetails {
     // Essential Info
     @Column(nullable = false, unique = true, length=100)
     private String userid;
+    @Column(nullable = false)
     private String userpw;
 
     // Property Info
