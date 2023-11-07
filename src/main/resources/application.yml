@@ -23,10 +23,10 @@ spring:
         format_sql: true
     database: mysql
 
-  security:
-    user:
-      name: admin
-      password: admin
+#  security:
+#    user:
+#      name: admin
+#      password: admin
 
   # if static resource happen change, auto apply
   devtools:

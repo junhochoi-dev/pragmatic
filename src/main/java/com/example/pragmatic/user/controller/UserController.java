@@ -18,16 +18,28 @@ public class UserController {
 
     @GetMapping("/login")
     public String login(){
-        System.out.println("##### [USER][SERVICE][LOGIN][GET]");
-        return "user/login";
+        try {
+            System.out.println("##### [USER][SERVICE][LOGIN][GET]");
+            return "user/login";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error/error";
+        }
     }
 
     @PostMapping("/login")
-    public String login(@ModelAttribute UserDto userDto){
-        System.out.println("##### [USER][SERVICE][LOGIN][POST]");
-        boolean loginResult = userService.login(userDto);
+    public String login(UserDto userDto){
+        try {
+            System.out.println(userDto.getUserid() + "\n" + userDto.getUserpw());
 
-        return loginResult ? "index" : "redirect:user/login";
+            System.out.println("##### [USER][SERVICE][LOGIN][POST]");
+            //boolean loginResult = userService.login(userDto);
+            //return loginResult ? "index" : "redirect:user/login";
+            return "index";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error/error";
+        }
     }
 
     @GetMapping("/regist")

@@ -17,7 +17,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-    String permissionPage[] = {"/", "/user/login", "/user/regist"};
+    static final String permissionPage[] = {"/", "/user/login", "/user/regist"};
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -26,7 +26,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers(permissionPage).permitAll();
-                //
                 // .anyRequest().authenticated()
 //                .and()
 //                .formLogin()

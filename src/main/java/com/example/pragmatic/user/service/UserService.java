@@ -2,9 +2,8 @@ package com.example.pragmatic.user.service;
 
 import com.example.pragmatic.user.User;
 import com.example.pragmatic.user.dto.UserDto;
-import com.example.pragmatic.user.repository.UserRepository;
+import com.example.pragmatic.user.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -14,7 +13,7 @@ import java.util.Optional;
 @Service
 public class UserService {
     @Autowired
-    private UserRepository userRepository;
+    private UserDao userRepository;
 
     @Autowired
     PasswordEncoder passwordEncoder;
