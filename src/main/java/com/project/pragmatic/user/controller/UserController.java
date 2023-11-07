@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -31,7 +33,7 @@ public class UserController {
             System.out.println(userDto.getUserid() + "\n" + userDto.getUserpw());
 
             System.out.println("##### [USER][SERVICE][LOGIN][POST]");
-            //boolean loginResult = userService.login(userDto);
+            Optional<UserDto> #### = userService.login(userDto);
             //return loginResult ? "index" : "redirect:user/login";
             return "index";
         } catch (Exception e) {
