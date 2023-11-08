@@ -14,7 +14,7 @@ spring:
   jpa:
     hibernate:
        # schema auto generate
-       ddl-auto: create
+       # ddl-auto: create
     # SQL query print
     show-sql: true
     properties:
@@ -33,10 +33,14 @@ spring:
     livereload:
       enabled: true
 
-  thymeleaf:
-    # dont use filename with root path just use filename
-    prefix: classpath:/templates/
-    # dont use filename with .html just use filename
-    suffix: .html
-    # thymeleaf use or not
-    enabled: true
+#  thymeleaf:
+#    # dont use filename with root path just use filename
+#    prefix: classpath:/templates/
+#    # dont use filename with .html just use filename
+#    suffix: .html
+#    # thymeleaf use or not
+#    enabled: true
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /

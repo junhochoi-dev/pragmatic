@@ -10,13 +10,13 @@ public class MainController {
         return "intro";
     }
 
-    @GetMapping("/error")
-    public String error(){
-        return "error/error";
-    }
-
     @GetMapping("/index")
     public String index(){
         return "index";
+    }
+
+    @GetMapping("/error")
+    public String error(){
+        return "error/error";
     }
 }

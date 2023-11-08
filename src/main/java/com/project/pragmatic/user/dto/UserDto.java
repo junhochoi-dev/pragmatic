@@ -1,11 +1,11 @@
 package com.project.pragmatic.user.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter @Setter
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserDto {
     private String userid;
     private String userpw;
@@ -13,8 +13,4 @@ public class UserDto {
     private String name;
     private String nickname;
     private String email;
-    public UserDto(String userid, String userpw){
-        this.userid = userid;
-        this.userpw = userpw;
-    }
 }

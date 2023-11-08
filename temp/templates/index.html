@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
@@ -11,6 +11,9 @@
 <body>
   <div class="m-1">
     <h1>메인 페이지</h1>
+<!--    <h1>${userDto.getName()}님 반갑습니다.</h1>-->
+    <div th:text="${name}"> name </div>
+    <h1>test</h1>
   </div>
 </body>
 </html>
