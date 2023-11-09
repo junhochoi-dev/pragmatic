@@ -44,3 +44,9 @@ spring:
     view:
       suffix: .jsp
       prefix: /
+
+# SWAGGER ERROR
+# Spring boot 2.6버전 이후
+# spring.mvc.pathmatch.matching-strategy => ant_apth_matcher에서 path_pattern_parser 변경
+    pathmatch:
+      matching-strategy: ant_path_matcher

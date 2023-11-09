@@ -20,8 +20,8 @@ public class UserApiController {
         return new ResponseEntity<UserDto>(userService.login(userDto), HttpStatus.OK);
     }
 
-//    @PostMapping("/regist")
-//    public ResponseEntity<?> regist(@RequestBody UserDto userDto){
-//        return new ResponseEntity<UserDto>(userService.regist(userDto), HttpStatus.OK);
-//    }
+    @PostMapping("/regist")
+    public ResponseEntity<?> regist(@RequestBody UserDto userDto){
+        return new ResponseEntity<Void>(HttpStatus.OK);
+    }
 }
