@@ -19,4 +19,9 @@ public class UserApiController {
     public ResponseEntity<?> login(@RequestBody UserDto userDto){
         return new ResponseEntity<UserDto>(userService.login(userDto), HttpStatus.OK);
     }
+
+//    @PostMapping("/regist")
+//    public ResponseEntity<?> regist(@RequestBody UserDto userDto){
+//        return new ResponseEntity<UserDto>(userService.regist(userDto), HttpStatus.OK);
+//    }
 }

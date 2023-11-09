@@ -4,11 +4,13 @@ import com.project.pragmatic.user.User;
 import com.project.pragmatic.user.dto.UserDto;
 import com.project.pragmatic.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
 @Controller
@@ -17,6 +19,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     @GetMapping("/login")
     public String login(){
@@ -30,9 +35,9 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String login(UserDto userDto, Model model, RedirectAttributes redirectAttributes){
+    public String login(HttpSession session, Model model, UserDto userDto){
         try {
-            System.out.println(userDto.getUserid() + "\n" + userDto.getUserpw());
+            userDto.setUserpw(passwordEncoder.encode(userDto.getUserpw()));
 
             System.out.println("##### [USER][SERVICE][LOGIN][POST]");
             UserDto resultDto = userService.login(userDto);
@@ -45,15 +50,19 @@ public class UserController {
                 System.out.println("2");
                 return "user/login";
             } else {
-                model.addAttribute("name", resultDto.getName());
-                redirectAttributes.addAttribute("name", resultDto.getName());
-                System.out.println("3");
+                session.setAttribute("userDto", resultDto);
                 return "redirect:/index";
             }
         } catch (Exception e) {
             e.printStackTrace();
             return "error/error";
         }
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "index";
     }
 
     @GetMapping("/regist")
@@ -63,9 +72,16 @@ public class UserController {
     }
 
     @PostMapping("/regist")
-    public String regist(User user){
-        System.out.println("##### [USER][SERVICE][REGIST][POST]");
-        userService.regist(user);
-        return "index";
+    public String regist(Model model, User user){
+        // view 단에서 데이터가 오갈때는 User 대신 UserDto를 사용한다
+        try{
+            System.out.println("##### [USER][SERVICE][REGIST][POST]");
+            user.setUserpw(passwordEncoder.encode(user.getUserpw()));
+            userService.regist(user);
+            return "user/login";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error/error";
+        }
     }
 }

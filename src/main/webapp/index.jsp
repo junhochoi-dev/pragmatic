@@ -1,6 +1,14 @@
+<%@ page import="com.project.pragmatic.user.dto.UserDto" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%
+  UserDto userDto = (UserDto) session.getAttribute("userDto");
+  String name = userDto.getName();
+  out.println(name);
+%>
+
 <!doctype html>
 <html>
   <head>
@@ -13,8 +21,8 @@
   </head>
   <body>
     <div class="m-1">
-      <h1>메인 페이지 !!!</h1>
-      <h1>${name}</h1>
+      <h1>BE PRAGMATIC</h1>
+      <h3> ${name} 님 환영합니다. </h3>
     </div>
   </body>
 </html>

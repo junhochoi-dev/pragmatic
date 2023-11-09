@@ -16,22 +16,22 @@
     <h1>PRAGMATIC에 오신 것을 환영합니다.</h1>
     <h1>회원가입 페이지</h1>
     <p>ID</p>
-    <input class="form-control" id="userid" name="userid" placeholder="ID"/>
+    <input id="userid" name="userid" placeholder="ID"/>
 
     <p>PASSWORD</p>
-    <input type="hidden" class="form-control" id="userpw" name="userpw" placeholder="PASSWORD"/>
+    <input type="password" id="userpw" name="userpw" placeholder="PASSWORD"/>
 
     <p>NAME</p>
-    <input class="form-control" placeholder="NAME"/>
+    <input id="name" name="name" placeholder="NAME"/>
 
     <p>BIRTH</p>
-    <input class="form-control" placeholder="EMAIL"/>
+    <input id="birth" name="birth" placeholder="EMAIL"/>
 
     <p>NUMBER</p>
-    <input class="form-control" placeholder="NUMBER"/>
+    <input id="number" name="number" placeholder="NUMBER"/>
 
     <p>EMAIL</p>
-    <input class="form-control" placeholder="EMAIL"/>
+    <input id="email" name="email" placeholder="EMAIL"/>
 
     <button type="submit" class="btn btn-primary" onclick="console.log({userid})">SIGN UP</button>
   </form>

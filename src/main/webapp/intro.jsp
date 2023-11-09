@@ -12,9 +12,11 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="m-1">
-      <h1>초기화면 페이지!!!</h1>
+    <div class="m-3">
+      <h1>BE PRAGMATIC</h1>
+      <h3>anything</h3>
       <button type="button" class="btn btn-primary" onclick="location.href='user/login'">LOGIN</button>
+      <button type="button" class="btn btn-primary" onclick="location.href='user/regist'">REGIST</button>
     </div>
   </body>
 </html>

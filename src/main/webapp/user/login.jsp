@@ -12,6 +12,7 @@
   <title>Document</title>
 </head>
 <body>
+    <h1> ${alert} </h1>
     <div>
       <form class="container" action="/user/login" method="post">
         <h1>PRAGMATIC에 오신 것을 환영합니다.</h1>
