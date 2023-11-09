@@ -6,5 +6,5 @@ import com.project.pragmatic.user.dto.UserDto;
 
 public interface UserService {
     public UserDto login(UserDto userDto);
-    void regist(User user);
+    void regist(UserDto userDto);
 }

@@ -21,6 +21,9 @@
     <p>PASSWORD</p>
     <input type="password" id="userpw" name="userpw" placeholder="PASSWORD"/>
 
+    <p>NICKNAME</p>
+    <input id="nickname" name="nickname" placeholder="NICKNAME"/>
+
     <p>NAME</p>
     <input id="name" name="name" placeholder="NAME"/>
 

@@ -1,7 +1,21 @@
 # pragmatic
 
 
-### Model Mapper
+
+
+## Spring Security
+
+#### Spring Security Crypto
+
+PasswordEncoder
+
+`passwordEncoder.encode(암호화할 비밀번호)`
+
+`passwordEncoder.matches(비교할 비밀번호, 암호화된 비밀번호)`
+
+https://kedric-me.tistory.com/entry/Spring-Password-Encoder-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-%EC%95%94%ED%98%B8%ED%99%94
+
+## Model Mapper
 ModelMapper는 Java 객체 간의 매핑을 쉽게 할 수 있게 도와주는 라이브러리
 DTO(Data Transfer Object)와 도메인 객체 간의 데이터 변환에 사용
 

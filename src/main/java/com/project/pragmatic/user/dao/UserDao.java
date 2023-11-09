@@ -10,5 +10,4 @@ import javax.transaction.Transactional;
 @Transactional
 public interface UserDao extends JpaRepository<User, Long> {
     User findByUserid(String userid);
-
 }

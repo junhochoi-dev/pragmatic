@@ -20,7 +20,7 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="m-1">
+    <div class="m-3">
       <h1>BE PRAGMATIC</h1>
       <h3> ${name} 님 환영합니다. </h3>
     </div>

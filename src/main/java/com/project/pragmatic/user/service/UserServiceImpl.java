@@ -21,15 +21,12 @@ public class UserServiceImpl implements UserService {
     public UserDto login(UserDto userDto) {
         System.out.println("##### [USER][REPOSITORY][LOGIN]");
         User user = userDao.findByUserid(userDto.getUserid());
-        if(user == null){
-            return null;
-        } else {
-            return modelMapper.map(user, UserDto.class);
-        }
+        System.out.println(user.toString());
+        return modelMapper.map(user, UserDto.class);
     }
 
-    public void regist(User user) {
+    public void regist(UserDto userDto) {
         System.out.println("##### [USER][REPOSITORY][REGIST]");
-        userDao.save(user);
+        userDao.save(modelMapper.map(userDto, User.class));
     }
 }
