@@ -3,20 +3,17 @@ package com.project.pragmatic.user.service;
 import com.project.pragmatic.user.User;
 import com.project.pragmatic.user.dto.UserDto;
 import com.project.pragmatic.user.dao.UserDao;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
-    @Autowired
-    private UserDao userDao;
-
-    @Autowired
-    private ModelMapper modelMapper;
-
+    private final UserDao userDao;
+    private final ModelMapper modelMapper;
+    private final PasswordEncoder passwordEncoder;
 
     public UserDto login(UserDto userDto) {
         System.out.println("##### [USER][REPOSITORY][LOGIN]");
