@@ -37,23 +37,23 @@ public class UserController {
     @PostMapping("/login")
     public String login(HttpSession session, Model model, UserDto userDto){
         try {
-            userDto.setUserpw(passwordEncoder.encode(userDto.getUserpw()));
+            //userDto.setUserpw(passwordEncoder.encode(userDto.getUserpw()));
+
 
             System.out.println("##### [USER][SERVICE][LOGIN][POST]");
             UserDto resultDto = userService.login(userDto);
 
 
+            System.out.println("#####");
+            System.out.println(userDto.toString());
             System.out.println(resultDto.toString());
+            System.out.println("#####");
 
             if(resultDto.getUserid() == null){
                 model.addAttribute("alert", "아이디가 존재하지 않습니다.");
                 System.out.println("1");
                 return "user/login";
-            } else if(!resultDto.getUserpw().equals(userDto.getUserpw())){
-                System.out.println(userDto.getUserpw());
-                System.out.println(resultDto.getUserpw());
-
-
+            } else if(!passwordEncoder.matches(userDto.getUserpw(), resultDto.getUserpw())){
                 model.addAttribute("alert", "비밀번호가 다릅니다.");
                 System.out.println("2");
                 return "user/login";

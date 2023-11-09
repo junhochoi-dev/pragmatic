@@ -11,7 +11,7 @@ PasswordEncoder
 
 `passwordEncoder.encode(암호화할 비밀번호)`
 
-`passwordEncoder.matches(비교할 비밀번호, 암호화된 비밀번호)`
+`passwordEncoder.matches(비교할 암호화 안 된 비밀번호, 암호화된 비밀번호)`
 
 https://kedric-me.tistory.com/entry/Spring-Password-Encoder-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-%EC%95%94%ED%98%B8%ED%99%94
 
