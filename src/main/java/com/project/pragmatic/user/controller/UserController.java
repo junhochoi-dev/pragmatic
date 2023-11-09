@@ -36,11 +36,12 @@ public class UserController {
 
     @PostMapping("/login")
     public String login(HttpSession session, Model model, UserDto userDto){
+
+
         try {
 
             System.out.println("##### [USER][SERVICE][LOGIN][POST]");
             UserDto resultDto = userService.login(userDto);
-
 
             if(resultDto.getUserid() == null){
                 model.addAttribute("alert", "아이디가 존재하지 않습니다.");
